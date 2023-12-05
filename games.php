@@ -1,13 +1,14 @@
 <?php 
 include __DIR__ . '/Views/header.php';
-include __DIR__.'/Model/Movie.php';
+include __DIR__.'/Model/Game.php';
+$games = Game::fetchGames();
 ?>
 <section>
     <div class="row">
         <?php
-            // foreach ($movies as $movie){
-            //     $movie->printCard();
-            // }
+            foreach ($games as $game){
+                $game->printCard();
+            }
         ?>
     </div>
 </section>
