@@ -53,7 +53,7 @@ class Movie extends Product
         $custom = $this->getVote();
         $flag = $this->getFlag();
         $genre = $this->genre;
-        include __DIR__.'/../Views/card.php';
+        include __DIR__.'/../Views/cardMovie.php';
     }
 
     public static function fetchMovies(){
