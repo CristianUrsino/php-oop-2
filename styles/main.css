@@ -1,0 +1,5 @@
+
+.my-card-text{
+    max-height: 200px;
+    overflow-y: auto;
+}

@@ -1,7 +1,11 @@
 <?php 
 include __DIR__ . '/Views/header.php';
 include __DIR__.'/Model/Movie.php';
-$movies = Movie::fetchMovies();
+try{
+    $movies = Movie::fetchMovies();
+}catch(Exception $e){
+    echo 'exception: '. $e;
+}
 ?>
 <section>
     <div class="row">

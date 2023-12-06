@@ -62,6 +62,9 @@ class Movie extends Product
         $movieString = file_get_contents(__DIR__.'/movie_db.json');
         $movieList = json_decode($movieString,true);
         $movies=[];
+        if(count($movieList)===0){
+            throw new Exception("Error in json decode");
+        }
         foreach($movieList as $item){
 
             //mette in genres_item tutti i generi del film in base all'id, NON ESSENDO COLLEGATI REALMENTE I GENERI: vado a prendere ogni casistica (gli id sembrano andare da 10 a 1000) ed avendo 7 generi li ho suddivisi inequalmente (in quando sopra i 100 sono meno rari) se presenti più id nello stesso range non viene aggiunto

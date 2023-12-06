@@ -22,11 +22,6 @@ class Book extends Product {
             'authors' => $this->authors,
         ];
         return $cardItem;
-        // $image = $this->img;
-        // $title = $this->title;
-        // $content = $this->description;
-        // $authors = $this->authors;
-        // include __DIR__.'/../Views/cardBook.php';
     }
 
     public static function fetchBooks() {
