@@ -8,7 +8,7 @@ $books = book::fetchBooks();
     <div class="row">
         <?php
             foreach ($books as $book){
-                $book->printCard();
+                $book->printCard($book->formatCard());
             }
         ?>
     </div>

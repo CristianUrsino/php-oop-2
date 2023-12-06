@@ -1,8 +1,10 @@
 <?php
 include __DIR__.'/Genre.php';
 include __DIR__.'/Product.php';
+include __DIR__.'/DrawCard.php';//CREARE CARTELLA TRAITS
 
 class Book extends Product {
+    use DrawCard;
     private string $description;
     private array $authors;
 
@@ -12,12 +14,19 @@ class Book extends Product {
         $this->authors = $_authors;
     }
 
-    public function printCard(){
-        $image = $this->img;
-        $title = $this->title;
-        $content = $this->description;
-        $authors = $this->authors;
-        include __DIR__.'/../Views/cardBook.php';
+    public function formatCard(){
+        $cardItem=[
+            'image' => $this->img,
+            'title' => $this->title,
+            'content' => $this->description,
+            'authors' => $this->authors,
+        ];
+        return $cardItem;
+        // $image = $this->img;
+        // $title = $this->title;
+        // $content = $this->description;
+        // $authors = $this->authors;
+        // include __DIR__.'/../Views/cardBook.php';
     }
 
     public static function fetchBooks() {
